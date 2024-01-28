@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          gh release delete -y master-nightly || :
+          gh release delete -y master-nightly
           git push --force origin HEAD:refs/tags/master-nightly
           gh release create --verify-tag -p --generate-notes master-nightly "README.md"
